@@ -7172,11 +7172,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.DAL.Tests\\SpyStore.DAL.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.DAL.Tests\\SpyStore.DAL.Tests.csproj",
       "projectName": "SpyStore.DAL.Tests",
-      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.DAL.Tests\\SpyStore.DAL.Tests.csproj",
+      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.DAL.Tests\\SpyStore.DAL.Tests.csproj",
       "packagesPath": "C:\\Users\\arnol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.DAL.Tests\\obj\\",
+      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.DAL.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -7196,11 +7196,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.DAL\\SpyStore.DAL.csproj": {
-              "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.DAL\\SpyStore.DAL.csproj"
+            "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.DAL\\SpyStore.DAL.csproj": {
+              "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.DAL\\SpyStore.DAL.csproj"
             },
-            "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj": {
-              "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj"
+            "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj": {
+              "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj"
             }
           }
         }

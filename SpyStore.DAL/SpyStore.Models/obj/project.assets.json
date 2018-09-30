@@ -3412,11 +3412,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj",
+      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj",
       "projectName": "SpyStore.Models",
-      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj",
+      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.Models\\SpyStore.Models.csproj",
       "packagesPath": "C:\\Users\\arnol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.DAL\\SpyStore.Models\\obj\\",
+      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.DAL\\SpyStore.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

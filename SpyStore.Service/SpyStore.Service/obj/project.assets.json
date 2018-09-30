@@ -12665,11 +12665,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore.Service\\SpyStore.Service\\SpyStore.Service.csproj",
+      "projectUniqueName": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.Service\\SpyStore.Service\\SpyStore.Service.csproj",
       "projectName": "SpyStore.Service",
-      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.Service\\SpyStore.Service\\SpyStore.Service.csproj",
+      "projectPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.Service\\SpyStore.Service\\SpyStore.Service.csproj",
       "packagesPath": "C:\\Users\\arnol\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore.Service\\SpyStore.Service\\obj\\",
+      "outputPath": "C:\\Users\\arnol\\source\\repos\\SpyStore\\SpyStore.Service\\SpyStore.Service\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
