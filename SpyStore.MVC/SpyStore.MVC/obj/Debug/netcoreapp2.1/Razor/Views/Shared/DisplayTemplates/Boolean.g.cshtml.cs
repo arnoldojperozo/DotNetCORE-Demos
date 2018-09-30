@@ -23,8 +23,38 @@ using SpyStore.MVC.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.MVC.WebServiceAccess;
+
+#line default
+#line hidden
+#line 4 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.MVC.WebServiceAccess.Base;
+
+#line default
+#line hidden
+#line 5 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.MVC.ViewModels;
+
+#line default
+#line hidden
+#line 6 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.Models.Entities;
+
+#line default
+#line hidden
+#line 7 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.Models.ViewModels;
+
+#line default
+#line hidden
+#line 8 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+using SpyStore.Models.ViewModels.Base;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"79b32bbfd6cbf4a5d3b77df212e163cf0c31208d", @"/Views/Shared/DisplayTemplates/Boolean.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"fa5e4d15ed96f21be645719af4b90cc7c29af280", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6da968de719725de9c38f29f5e39a3f0fef50802", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_DisplayTemplates_Boolean : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<bool?>
     {
         #pragma warning disable 1998
