@@ -1,4 +1,4 @@
-﻿@model OrderWithDetailsAndProductInfo
+@model OrderWithDetailsAndProductInfo
 @{
     ViewData["Title"] = "Details";
 }
@@ -18,7 +18,8 @@
         <label>Billing Address:</label>
         <address>
             <strong>John Doe</strong><br>
-            123 State Street<br>Whatever, UT 55555<br>
+            123 State Street<br>
+            Whatever, UT 55555<br>
             <abbr title="Phone">P:</abbr> (123) 456-7890
         </address>
     </div>
@@ -26,7 +27,8 @@
         <label>Shipping Address:</label>
         <address>
             <strong>John Doe</strong><br>
-            123 State Street<br> Whatever, UT 55555<br>
+            123 State Street<br>
+            Whatever, UT 55555<br>
             <abbr title="Phone">P:</abbr> (123) 456-7890
         </address>
     </div>
@@ -42,14 +44,15 @@
             </tr>
         </thead>
         <tbody>
-            @for (int x = 0; x < Model.OrderDetails.Count; x++)
+            @for (int x=0;x<Model.OrderDetails.Count;x++)
             {
                 var item = Model.OrderDetails[x];
                 <tr>
                     <td>
                         <div class="product-cell-detail">
                             <img src="@Url.Content($"~/images/{item.ProductImageThumb}")" class="pull-left" />
-                            <a asp-controller="Products" asp-action="Details"
+                            <a asp-controller="Products"
+                               asp-action="Details"
                                asp-route-id="@item.ProductId" class="h5">
                                 @Html.DisplayFor(model => item.ModelName)
                             </a>
@@ -82,8 +85,8 @@
         </tfoot>
     </table>
 </div>
+
 <div class="pull-right">
-    <a asp-action="Index" asp-route-customerid="@Model.CustomerId" class="btn btnprimary">
-        Back to Order History
-    </a>
+    <a asp-action="Index" asp-route-customerid="@Model.CustomerId" class="btn btn-primary">Back to Order History</a>
 </div>
+

@@ -1,38 +1,43 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SpyStore.MVC.Configuration;
+using SpyStore.MVC.WebServiceAccess;
+using SpyStore.MVC.WebServiceAccess.Base;
+using SpyStore.MVC.Authentication;
+using SpyStore.MVC.Filters;
 
 namespace SpyStore.MVC
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(env.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables();
+            Configuration = builder.Build();
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<CookiePolicyOptions>(options =>
-            {
-                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+            // Add framework services.
+            services.AddSingleton(_ => Configuration);
+            services.AddSingleton<IWebServiceLocator,WebServiceLocator>();
+            services.AddSingleton<IWebApiCalls, WebApiCalls>();
+            services.AddSingleton<IAuthHelper, AuthHelper>();
+            services.AddMvc(config => {
+                config.Filters.Add(
+                    new AuthActionFilter(services.BuildServiceProvider().GetService<IAuthHelper>()));
             });
-
-
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.BuildServiceProvider().GetService<IAuthHelper>()
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,7 +49,7 @@ namespace SpyStore.MVC
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
+                //app.UseBrowserLink();
             }
             else
             {
@@ -52,7 +57,7 @@ namespace SpyStore.MVC
             }
 
             app.UseStaticFiles();
-
+            
             //app.UseMvcWithDefaultRoute();
             app.UseMvc(routes =>
             {

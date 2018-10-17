@@ -19,42 +19,37 @@ using SpyStore.MVC;
 #line default
 #line hidden
 #line 2 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
-using SpyStore.MVC.Models;
-
-#line default
-#line hidden
-#line 3 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.MVC.WebServiceAccess;
 
 #line default
 #line hidden
-#line 4 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+#line 3 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.MVC.WebServiceAccess.Base;
 
 #line default
 #line hidden
-#line 5 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+#line 4 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.MVC.ViewModels;
 
 #line default
 #line hidden
-#line 6 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+#line 5 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.Models.Entities;
 
 #line default
 #line hidden
-#line 7 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+#line 6 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.Models.ViewModels;
 
 #line default
 #line hidden
-#line 8 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
+#line 7 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\_ViewImports.cshtml"
 using SpyStore.Models.ViewModels.Base;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cd7e23115847e670048571896b1cb3c2d22ef9f7", @"/Views/Shared/DisplayTemplates/ProductAndCategoryBase.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6da968de719725de9c38f29f5e39a3f0fef50802", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ec03bcea3de07d9112f2933877ce90791a284377", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_DisplayTemplates_ProductAndCategoryBase : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ProductAndCategoryBase>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Products", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -109,7 +104,7 @@ WriteAttributeValue("", 118, Url.Content($"~/images/{Model.ProductImage}"), 118,
             WriteLiteral("</div>\r\n        <div class=\"title-container\">\r\n            <h5>\r\n                ");
             EndContext();
             BeginContext(315, 153, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "58631c87e4ba454788b7be1cab3068dd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9360e0d58d5949b18f51bae666d8484d", async() => {
                 BeginContext(390, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();
@@ -175,7 +170,7 @@ WriteAttributeValue("", 118, Url.Content($"~/images/{Model.ProductImage}"), 118,
             WriteLiteral("            ");
             EndContext();
             BeginContext(712, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4107944317fc45e28d6ddaeacc2be908", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1fd4797a36e4577a2fa397dd1069a3f", async() => {
                 BeginContext(802, 18, false);
 #line 19 "C:\Users\arnol\source\repos\SpyStore\SpyStore.MVC\SpyStore.MVC\Views\Shared\DisplayTemplates\ProductAndCategoryBase.cshtml"
        Write(Model.CategoryName);
@@ -225,7 +220,7 @@ WriteAttributeValue("", 118, Url.Content($"~/images/{Model.ProductImage}"), 118,
             WriteLiteral("        ");
             EndContext();
             BeginContext(837, 264, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a7c6f92e2f8c4e0890b6923847c6d90e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "54800ed5a0e24dadacdd2dc2697bcd64", async() => {
                 BeginContext(1007, 90, true);
                 WriteLiteral("\r\n            <span class=\"glyphicon glyphicon-shopping-cart\"></span>Add To Cart\r\n        ");
                 EndContext();

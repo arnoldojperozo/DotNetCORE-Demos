@@ -11,19 +11,25 @@
     </div>
     <div class="col-sm-6">
         <h1 class="hidden-xs">@Html.DisplayFor(x => x.ModelName)</h1>
-        <div class="price-label">Price:</div><div class="price">
-            @Html.DisplayFor(x => x.CurrentPrice)
-        </div>
+
+        <div class="price-label">Price:</div><div class="price">@Html.DisplayFor(x => x.CurrentPrice)</div>
+
         <div class="units">Only @Html.DisplayFor(x => x.UnitsInStock) left.</div>
         <div class="units"></div>
-        <div class="product-description">@Html.DisplayFor(x => x.Description)</div>
+
+        <div class="product-description">
+            @Html.DisplayFor(x => x.Description)
+        </div>
+
         <ul class="product-details">
-            <li><div class="key-label">MODEL NUMBER:</div> @Html.DisplayFor(x => x.ModelNumber)</li>
+            <li>
+                <div class="key-label">MODEL NUMBER:</div> @Html.DisplayFor(x => x.ModelNumber)
+            </li>
             <li>
                 <div class="key-label">CATEGORY:</div>
-                <a asp-controller="Products" asp-action="ProductList"
-                   asp-route-id="@Model.CategoryId"
-                   class="Category">@Model.CategoryName</a>
+                <a asp-controller="Products"
+                   asp-action="ProductList"
+                   asp-route-id="@Model.CategoryId">@Model.CategoryName</a>
             </li>
         </ul>
         <input type="hidden" asp-for="Id" />

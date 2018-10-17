@@ -1,5 +1,5 @@
-﻿using SpyStore.MVC.ViewModels.Base;
-using SpyStore.MVC.Validations;
+﻿using SpyStore.MVC.Validation;
+using SpyStore.MVC.ViewModels.Base;
 
 namespace SpyStore.MVC.ViewModels
 {
@@ -8,4 +8,5 @@ namespace SpyStore.MVC.ViewModels
         [MustNotBeGreaterThan(nameof(UnitsInStock))]
         public int Quantity { get; set; }
     }
+
 }

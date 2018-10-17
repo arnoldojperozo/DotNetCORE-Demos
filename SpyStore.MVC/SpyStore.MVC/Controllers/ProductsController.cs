@@ -17,18 +17,36 @@ namespace SpyStore.MVC.Controllers
             _webApiCalls = webApiCalls;
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Test()
         {
-            return RedirectToAction(nameof(CartController.AddToCart),
-                nameof(CartController).Replace("Controller", ""),
-                new { customerId = ViewBag.CustomerId, productId = id, cameFromProducts = true });
+            return View(new ModelToTestTemplates
+            {
+                NegativeBool = false, PostiveBool = true,
+                FullDateTime = DateTime.Now,FullDateTimeNullable = DateTime.Now,
+                JustDate = DateTime.Now, JustTime=DateTime.Now
+            });
+        }
+        [HttpGet]
+        public ActionResult Error()
+        {
+            return View();
         }
 
-        internal async Task<IActionResult> GetListOfProducts(int id = -1, bool featured = false,
-            string searchString = "")
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return RedirectToAction(nameof(Featured));
+        }
+
+        public ActionResult Details(int id)
+        {
+            return RedirectToAction(nameof(CartController.AddToCart), nameof(CartController).Replace("Controller", ""), new { customerId = ViewBag.CustomerId, productId = id, cameFromProducts = true });
+        }
+
+        internal async Task<IActionResult> GetListOfProducts(
+            int id = -1, bool featured = false, string searchString = "")
         {
             IList<ProductAndCategoryBase> prods;
-
             if (featured)
             {
                 prods = await _webApiCalls.GetFeaturedProductsAsync();
@@ -41,7 +59,6 @@ namespace SpyStore.MVC.Controllers
             {
                 prods = await _webApiCalls.GetProductsForACategoryAsync(id);
             }
-
             if (prods == null)
             {
                 return NotFound();
@@ -56,7 +73,7 @@ namespace SpyStore.MVC.Controllers
             ViewBag.Header = "Featured Products";
             ViewBag.ShowCategory = true;
             ViewBag.Featured = true;
-            return await GetListOfProducts(featured: true);
+            return await GetListOfProducts(featured:true);
         }
 
         [HttpGet]
@@ -70,6 +87,7 @@ namespace SpyStore.MVC.Controllers
             return await GetListOfProducts(id);
         }
 
+
         [Route("[controller]/[action]")]
         [HttpPost("{searchString}")]
         public async Task<IActionResult> Search(string searchString)
@@ -78,7 +96,7 @@ namespace SpyStore.MVC.Controllers
             ViewBag.Header = "Search Results";
             ViewBag.ShowCategory = true;
             ViewBag.Featured = false;
-            return await GetListOfProducts(searchString: searchString);
+            return await GetListOfProducts(searchString:searchString);
         }
     }
 }

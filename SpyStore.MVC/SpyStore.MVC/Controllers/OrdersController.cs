@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SpyStore.Models.Entities;
@@ -32,12 +32,10 @@ namespace SpyStore.MVC.Controllers
         {
             ViewBag.Title = "Order Details";
             ViewBag.Header = "Order Details";
-            OrderWithDetailsAndProductInfo orderDetails =
-            await _webApiCalls.GetOrderDetailsAsync(customerId, orderId);
+            OrderWithDetailsAndProductInfo orderDetails = await _webApiCalls.GetOrderDetailsAsync(customerId, orderId);
             if (orderDetails == null) return NotFound();
             return View(orderDetails);
         }
-
 
     }
 }

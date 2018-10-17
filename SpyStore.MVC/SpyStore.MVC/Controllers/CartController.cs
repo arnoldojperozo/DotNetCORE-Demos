@@ -16,17 +16,17 @@ namespace SpyStore.MVC.Controllers
     public class CartController : Controller
     {
         private readonly IWebApiCalls _webApiCalls;
-        readonly MapperConfiguration _config;
-
+        readonly MapperConfiguration _config = null;
         public CartController(IWebApiCalls webApiCalls)
         {
             _webApiCalls = webApiCalls;
-            _config = new MapperConfiguration(cfg =>
-            {
-                cfg.CreateMap<CartRecordViewModel, ShoppingCartRecord>();
-                cfg.CreateMap<CartRecordWithProductInfo, CartRecordViewModel>();
-                cfg.CreateMap<ProductAndCategoryBase, AddToCartViewModel>();
-            });
+            _config = new MapperConfiguration(
+                cfg =>
+                {
+                    cfg.CreateMap<CartRecordViewModel, ShoppingCartRecord>();
+                    cfg.CreateMap<CartRecordWithProductInfo, CartRecordViewModel>();
+                    cfg.CreateMap<ProductAndCategoryBase, AddToCartViewModel>();
+                });
         }
 
         [HttpGet]
@@ -60,8 +60,9 @@ namespace SpyStore.MVC.Controllers
             return View(cartRecord);
         }
 
-        [HttpPost("{productId}"), ValidateAntiForgeryToken, ActionName("AddToCart")]
-        public async Task<IActionResult> AddToCartPost(int customerId, int productId, AddToCartViewModel item)
+        [ActionName("AddToCart"),HttpPost("{productId}"),ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddToCartPost(
+            int customerId, int productId, AddToCartViewModel item)
         {
             if (!ModelState.IsValid) return View(item);
             try
@@ -76,8 +77,9 @@ namespace SpyStore.MVC.Controllers
             return RedirectToAction(nameof(CartController.Index), new { customerId });
         }
 
-        [HttpPost("{id}"), ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int customerId, int id, string timeStampString, CartRecordViewModel item)
+        [HttpPost("{id}"),ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(int customerId, int id, 
+            string timeStampString, CartRecordViewModel item)
         {
             item.TimeStamp = JsonConvert.DeserializeObject<byte[]>($"\"{timeStampString}\"");
             if (!ModelState.IsValid) return PartialView(item);
@@ -92,27 +94,27 @@ namespace SpyStore.MVC.Controllers
             }
             catch (Exception ex)
             {
-                ModelState.AddModelError(string.Empty,
-                "An error occurred updating the cart. Please reload the page and try again.");
+                ModelState.AddModelError(string.Empty, "An error occurred updating the cart.  Please reload the page and try again.");
                 return PartialView(item);
             }
         }
 
-        [HttpPost("{id}"), ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int customerId, int id, ShoppingCartRecord item)
+        [HttpPost("{id}"),ValidateAntiForgeryToken]
+        public async Task<IActionResult> Delete(int customerId, int id,
+            ShoppingCartRecord item)
         {
             await _webApiCalls.RemoveCartItemAsync(customerId, id, item.TimeStamp);
             return RedirectToAction(nameof(Index), new { customerId });
         }
 
-        [HttpPost, ValidateAntiForgeryToken]
+        [HttpPost,ValidateAntiForgeryToken]
         public async Task<IActionResult> Buy(int customerId, Customer customer)
         {
             int orderId = await _webApiCalls.PurchaseCartAsync(customer);
             return RedirectToAction(
-            nameof(OrdersController.Details),
-            nameof(OrdersController).Replace("Controller", ""),
-            new { customerId, orderId });
+                nameof(OrdersController.Details), 
+                nameof(OrdersController).Replace("Controller",""),
+                new { customerId, orderId });
         }
 
     }
